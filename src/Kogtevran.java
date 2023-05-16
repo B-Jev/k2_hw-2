@@ -1,10 +1,10 @@
-public class kogtevran extends hogwarts {
+public class Kogtevran extends Hogwarts {
     private int smart;
     private int creative;
     private int witty;
     private int wise;
 
-    public kogtevran(String student, int smart, int creative, int witty, int wise, int magic, int transgression) {
+    public Kogtevran(String student, int smart, int creative, int witty, int wise, int magic, int transgression) {
         super(student, magic, transgression);
         this.smart = smart;
         this.creative = creative;
@@ -59,9 +59,14 @@ public class kogtevran extends hogwarts {
         return this.creative + this.smart + this.wise + this.witty;
     }
 
-    public static void print(kogtevran[] kogtevrans) {
+    @Override
+    public void printFacultyName(String first, String second) {
+        System.out.println(first + " лучший Когтевранец ,чем " + second);
+    }
+
+    public static void print(Kogtevran[] kogtevrans) {
         for (int i = 0; i < kogtevrans.length; i++) {
-            kogtevran kogtevran = kogtevrans[i];
+            Kogtevran kogtevran = kogtevrans[i];
             System.out.println(kogtevran);
         }
     }

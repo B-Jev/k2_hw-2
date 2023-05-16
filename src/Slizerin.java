@@ -1,11 +1,11 @@
-public class slizerin extends hogwarts {
+public class Slizerin extends Hogwarts {
     private int power;
     private int cunning;
     private int decisiveness;
     private int ambition;
     private int resourcefulness;
 
-    public slizerin(String student, int power, int cunning, int decisiveness, int ambition, int resourcefulness, int magic, int transgression) {
+    public Slizerin(String student, int power, int cunning, int decisiveness, int ambition, int resourcefulness, int magic, int transgression) {
         super(student, magic, transgression);
         this.power = power;
         this.cunning = cunning;
@@ -70,9 +70,14 @@ public class slizerin extends hogwarts {
         return this.ambition + this.cunning + this.decisiveness + this.resourcefulness + this.power;
     }
 
-    public static void print(slizerin[] slizerins) {
+    @Override
+    public void printFacultyName(String first, String second) {
+        System.out.println(first + " лучший Слизеринец ,чем " + second);
+    }
+
+    public static void print(Slizerin[] slizerins) {
         for (int i = 0; i < slizerins.length; i++) {
-            slizerin slizerin = slizerins[i];
+            Slizerin slizerin = slizerins[i];
             System.out.println(slizerin);
         }
     }

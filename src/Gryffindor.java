@@ -1,11 +1,9 @@
-import java.util.Arrays;
-
-public class gryffindor extends hogwarts {
+public class Gryffindor extends Hogwarts {
     private int nobility;
     private int honor;
     private int courage;
 
-    public gryffindor(String student, int nobility, int honor, int courage, int transgression, int magic) {
+    public Gryffindor(String student, int nobility, int honor, int courage, int transgression, int magic) {
         super(student, transgression, magic);
         this.nobility = nobility;
         this.honor = honor;
@@ -36,9 +34,9 @@ public class gryffindor extends hogwarts {
         this.courage = courage;
     }
 
-    public static void print(gryffindor[] gryffindors) {
+    public static void print(Gryffindor[] gryffindors) {
         for (int i = 0; i < gryffindors.length; i++) {
-            gryffindor gryffindor = gryffindors[i];
+            Gryffindor gryffindor = gryffindors[i];
             System.out.println(gryffindor);
         }
     }
@@ -55,5 +53,10 @@ public class gryffindor extends hogwarts {
     @Override
     public int calkulateSpecificLevel() {
         return this.courage + this.honor + this.nobility;
+    }
+
+    @Override
+    public void printFacultyName(String first, String second) {
+        System.out.println(first + " лучший Гриффендорец ,чем " + second);
     }
 }

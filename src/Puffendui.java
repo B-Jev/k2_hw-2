@@ -1,9 +1,9 @@
-public class puffendui extends hogwarts {
+public class Puffendui extends Hogwarts {
     private int diligence;
     private int faithful;
     private int honest;
 
-    public puffendui(String student, int diligence, int faithful, int honest, int transgression, int magic) {
+    public Puffendui(String student, int diligence, int faithful, int honest, int transgression, int magic) {
         super(student, transgression, magic);
         this.diligence = diligence;
         this.faithful = faithful;
@@ -48,9 +48,14 @@ public class puffendui extends hogwarts {
         return this.diligence + this.faithful + this.honest;
     }
 
-    public static void print(puffendui[] puffenduis) {
+    @Override
+    public void printFacultyName(String first, String second) {
+        System.out.println(first + " лучший Пуффендуец ,чем " + second);
+    }
+
+    public static void print(Puffendui[] puffenduis) {
         for (int i = 0; i < puffenduis.length; i++) {
-            puffendui puffendui = puffenduis[i];
+            Puffendui puffendui = puffenduis[i];
             System.out.println(puffendui);
         }
     }

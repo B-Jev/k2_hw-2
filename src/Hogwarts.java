@@ -1,9 +1,9 @@
-public abstract class hogwarts {
+public abstract class Hogwarts {
     private String student;
     private int magic;
     private int transgression;
 
-    public hogwarts(String student, int magic, int transgression) {
+    public Hogwarts(String student, int magic, int transgression) {
         this.student = student;
         this.magic = magic;
         this.transgression = transgression;
@@ -43,12 +43,13 @@ public abstract class hogwarts {
     }
 
     public abstract int calkulateSpecificLevel();
+    public abstract void printFacultyName(String first, String second);
 
     public int calculateLevel() {
         return this.magic + this.transgression;
     }
 
-    public void compareFaculty(hogwarts hogwarts) {
+    public void compareFaculty(Hogwarts hogwarts) {
         if (this.getClass().equals(hogwarts.getClass())) {
             compareSpecificLevel(hogwarts);
         } else {
@@ -56,7 +57,7 @@ public abstract class hogwarts {
         }
     }
 
-    public void compareLevel(hogwarts hogwarts) {
+    private void compareLevel(Hogwarts hogwarts) {
         int thisLevel = this.calculateLevel();
         int overLevel = hogwarts.calculateLevel();
         if (thisLevel > overLevel) {
@@ -69,13 +70,13 @@ public abstract class hogwarts {
 
     }
 
-    public void compareSpecificLevel(hogwarts hogwarts) {
+    private void compareSpecificLevel(Hogwarts hogwarts) {
         int thisLevel = this.calculateLevel() + this.calkulateSpecificLevel();
         int overLevel = hogwarts.calculateLevel() + hogwarts.calkulateSpecificLevel();
         if (thisLevel > overLevel) {
-            System.out.println(this.getStudent() + " сильнее чем " + hogwarts.getStudent());
+            printFacultyName(this.getStudent(), hogwarts.getStudent());
         } else if (thisLevel < overLevel) {
-            System.out.println(hogwarts.getStudent() + " сильнее чем " + this.getStudent());
+            printFacultyName(hogwarts.getStudent(), this.getStudent());
         } else {
             System.out.println(this.getStudent() + " ученики одинаковы по силе " + hogwarts.getStudent());
         }
